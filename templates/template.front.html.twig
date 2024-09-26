@@ -7,15 +7,13 @@
     <title>{% block title %}Playstation Post Blogger{% endblock %}</title>
 
     {% block stylesheets %}
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="{{ asset ('img/icons/Playstation-ico.ico')}}">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    {% block importmap %}{{importmap ('app')}}{% endblock %}
+    <link rel="icon" href="{{ asset ('img/icons/Playstation-ico.ico')}}">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
     {% endblock %}
     
 </head>
@@ -45,13 +43,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/carousel-home/miles_morales.jpg" class="d-block w-100" alt="...">
+                    <img src="{{asset('img/carousel-home/miles_morales.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/carousel-home/godOfWar.jpeg" class="d-block w-100" alt="...">
+                    <img src="{{asset('img/carousel-home/godOfWar.jpeg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/carousel-home/InfamousSecondSon.png" class="d-block w-100" alt="...">
+                    <img src="{{asset('img/carousel-home/InfamousSecondSon.png')}}" class="d-block w-100" alt="...">
                 </div>
 
             </div>
@@ -177,7 +175,7 @@
         </div>
     </footer>
 
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/popper.min.js"></script>
 </body>
 

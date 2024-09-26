@@ -1,5 +1,30 @@
-<nav>
-    {# on utilise path('nom_du_chemin') lorsqu'on veut un lien vers une page #}
-    <a href="{{ path('homepage') }}">Homepage</a>
-    <a href="{{ path('about_me') }}">About me</a>
-</nav>
+    <nav class=" navbar-expand-lg fixed-top navbar bg-dark shadow" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="{{asset ('img/Playstation-logo.png')}}" alt="logo" width="35"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-5">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path ('homepage')}}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Service</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+    </nav>
