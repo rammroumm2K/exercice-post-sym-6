@@ -1,0 +1,75 @@
+body{
+    font-family: 'Roboto', sans-serif!important;
+}
+
+:root{
+
+    --color1: #0070D1;
+}
+
+.filter{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.filter:hover{
+    cursor: pointer;
+}
+
+.carousel-container {
+    margin-top: 40px; 
+}
+.carousel-item img{
+    filter: brightness(80%);
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 60%; 
+    left: 50%; 
+    transform: translate(-40%, -50%);
+    color: #fff; 
+    text-align: center;
+    padding: 10px;
+}
+
+#featured .card{
+    color: white;  
+    background-color: #212529;
+}
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+}
+
+.card-cover:hover {
+    transition: 1s;
+    cursor: pointer;
+    transform: translateY(10px);
+}
+  
+#featured .card:hover{
+    cursor: pointer;
+    transition: .5s;
+    transform: scale(1.05);
+}
+
+#plus{
+    background-color: #F9BE00;
+}
+
+#games{
+    background-color: #1F1F1F;
+}
+
+#featured{
+    background-color: #ededed;
+}
+
+#games .card:hover{
+    cursor: pointer;
+    transition: .7s;
+    filter: brightness(50%);
+}
