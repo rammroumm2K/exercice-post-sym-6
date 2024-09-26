@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playstation</title>
+    <title>{% block title %}Playstation Post Blogger{% endblock %}</title>
+
+    {% block stylesheets %}
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/icons/Playstation-ico.ico">
+    <link rel="icon" href="{{ asset ('img/icons/Playstation-ico.ico')}}">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,43 +16,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    {% endblock %}
+    
 </head>
+
 
 <body>
 
     <!-- NavBar -->
-    <nav class=" navbar-expand-lg fixed-top navbar bg-dark shadow" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/Playstation-logo.png" alt="logo" width="35"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+    
+    {% block nav %}
+    
+    {% include "main/_menu.html.twig" %}
 
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-5">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Service</a>
-                    </li>
-                </ul>
-            </div>
+    {% endblock %}
 
-
-
-        </div>
-    </nav>
-
-    <!-- Carousel -->
+   
+    {% block carousel %} <!-- Carousel -->
     <div class="carousel-container">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
@@ -85,8 +67,11 @@
             </button>
         </div>
     </div>
+    {% endblock %}
+    
 
     <!-- Features -->
+    {% block containerPost %}
     <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">Features</h2>
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
@@ -133,7 +118,8 @@
             </div>
         </div>
     </div>
-
+{% endblock %}
+    
     
     <!-- Playstation Plus -->
     <div id="plus">

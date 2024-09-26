@@ -13,7 +13,7 @@ class MainController extends AbstractController
     public function index(): Response
     {
         return $this->render('main/index.html.twig', [
-            'title' => 'Homepage',
+            'title' => 'Playstation Post Blogger',
             'homepage_text'=> "Nous somme le ".date('d/m/Y \à H:i'),
             
         ]);
