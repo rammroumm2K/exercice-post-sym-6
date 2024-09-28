@@ -24,9 +24,11 @@
                         <a class="nav-link" href="{{path ('app_login') }}">Login</a>                          
                     </li>
                      {% endif %}
+                         {% for section in sections %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
+                      <a class="nav-link" href="{{ path('section',{id:section.id}) }}">{{ section.sectionTitle }}</a>
                     </li>
+                             {% endfor %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Service</a>
                     </li>
