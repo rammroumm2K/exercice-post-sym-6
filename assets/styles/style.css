@@ -73,3 +73,14 @@ body{
     transition: .7s;
     filter: brightness(50%);
 }
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background-image: url(../img/carousel-home/PSBlueBG.jpg.png);
+    background-size: cover;
+    }
+
+    #PSLOG{
+        background-image: url(../img/carousel-home/backgroundPS-FORM.jpg.png);
+        background-size: cover;
+    }

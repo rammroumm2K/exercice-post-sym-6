@@ -18,18 +18,37 @@
     
 </head>
 
-
-
-<body>
- {% block nav %}
+<header>
+    {% block nav %}
      <!-- NavBar -->
     {% include "main/_menu.html.twig" %}
 
     {% endblock %}
 
 
+</header>
 
-</body> 
+
+
+ <body>
+ {% block body %}
+ 
+ 
+  
+ {% endblock %}
+
+ 
+    {% block footer %}
+  
+    {% include "main/footer.html.twig" %}
+  
+  {% endblock %}
+ </body> 
+
+
+  </html>
+
+
    
 
    
