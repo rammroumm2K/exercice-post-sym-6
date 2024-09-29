@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Playstation Post Blogger{% endblock %}</title>
+
+    {% block stylesheets %}
+    {% block importmap %}{{importmap ('app')}}{% endblock %}
+    <link rel="icon" href="{{ asset ('img/icons/Playstation-ico.ico')}}">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+    {% endblock %}
+    
+</head>
+
+<header>
+    {% block nav %}
+     <!-- NavBar -->
+    {% include "admin/_menu.html.twig" %}
+
+    {% endblock %}
+
+
+</header>
+
+
+
+ <body>
+ {% block body %}
+ 
+  {% block main %}    {% endblock %}
+  
+ {% endblock %}
+
+
+    {% block footer %}
+  
+    {% include "main/footer.html.twig" %}
+  
+  {% endblock %}
+ </body> 
+
+
+  </html>
+
+
+   
+
+   

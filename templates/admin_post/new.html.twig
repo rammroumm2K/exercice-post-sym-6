@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'template.back.html.twig' %}
 
 {% block title %}{{ parent() }} | {{ title }} }}{% endblock %}
 {% block header %}
@@ -8,7 +8,9 @@
 
 {% block main %}
 
+    <div class="row" style="margin-top: 6rem;">
     {{ include('admin_post/_form.html.twig') }}
 
     <a href="{{ path('app_admin_post_index') }}">back to list</a>
+    </div>
 {% endblock %}

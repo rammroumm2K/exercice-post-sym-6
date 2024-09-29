@@ -1,25 +1,30 @@
-{% extends 'base.html.twig' %}
+{% extends 'template.back.html.twig' %}
 
 {% block title %}Admin CRUD{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
+    <div class="container" style="margin-top: 6rem;">
         {% block header %}
             <h1 class="display-4 text-center">{{ title }}</h1>
             <p class="lead text-center">{{ homepage_text }}</p>
         {% endblock %}
 
         {% block main %}
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <a href="{{ path('app_admin_section_index') }}" class="btn btn-primary btn-block mb-3">
-                        Crud Section <span class="badge bg-light text-dark">Gestion</span>
-                    </a>
-                    <a href="{{ path('app_admin_post_index') }}" class="btn btn-success btn-block">
-                        Crud Post <span class="badge bg-light text-dark">Gestion</span>
-                    </a>
-                </div>
-            </div>
+            <div class="container justify-content-center">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <a href="{{ path('app_admin_section_index') }}" class="btn btn-primary btn-lg btn-block ">
+                Crud Section
+            </a>
+            <a href="{{ path('app_admin_post_index') }}" class="btn btn-success btn-lg btn-block">
+                Crud Post
+            </a>
+        </div>
+    </div>
+</div>
+
         {% endblock %}
     </div>
+
 {% endblock %}
+
