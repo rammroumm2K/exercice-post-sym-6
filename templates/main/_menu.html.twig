@@ -15,11 +15,13 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{ path ('about_me')}}">About</a>
                     </li>
-                         {% for section in sections %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ path('section',{id:section.id}) }}">{{ section.sectionTitle }}</a>
-                    </li>
-                             {% endfor %}
+                        {% if sections is defined %}
+                        {% for section in sections %}
+                              <li class="nav-item">
+                               <a class="nav-link" href="{{ path('section', {id: section.id}) }}">{{ section.sectionTitle }}</a>
+                                 </li>
+                        {% endfor %}
+                        {% endif %}
                     {% if is_granted('IS_AUTHENTICATED') %}
                 <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
