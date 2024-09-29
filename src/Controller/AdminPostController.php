@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Post;
-use App\Form\PostType;
+use App\Form\Post1Type;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,12 +12,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/admin/post')]
-final class AdminPostController extends AbstractController{
+final class AdminPostController extends AbstractController
+{
     #[Route(name: 'app_admin_post_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
         return $this->render('admin_post/index.html.twig', [
             'posts' => $postRepository->findAll(),
+            'title' => 'Posts',
+            'homepage_text' => "Administration des Posts par {$this->getUser()->getUsername()}",
         ]);
     }
 
@@ -43,7 +46,6 @@ final class AdminPostController extends AbstractController{
             'title' => 'New Post',
             'homepage_text' => "Administration des Posts par {$this->getUser()->getUsername()}",
         ]);
-
     }
 
     #[Route('/{id}', name: 'app_admin_post_show', methods: ['GET'])]
@@ -51,6 +53,8 @@ final class AdminPostController extends AbstractController{
     {
         return $this->render('admin_post/show.html.twig', [
             'post' => $post,
+            'title' => 'Post',
+            'homepage_text' => "Administration des Posts par {$this->getUser()->getUsername()}",
         ]);
     }
 
@@ -69,6 +73,8 @@ final class AdminPostController extends AbstractController{
         return $this->render('admin_post/edit.html.twig', [
             'post' => $post,
             'form' => $form,
+            'title' => "Edit Post : {$post->getPostTitle()}",
+            'homepage_text' => "Administration des Posts par {$this->getUser()->getUsername()}",
         ]);
     }
 
