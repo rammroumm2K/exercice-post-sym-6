@@ -2,27 +2,65 @@
 {% extends 'template.front.html.twig' %}
 
 {# on surcharge le block parent #}
-{% block title %}{{ parent() }} | {{ title }}{% endblock %}
+{% block title %}
+	{{ parent() }}
+	|
+	{{ title }}
+{% endblock %}
 
 {% block header %}
-<h1>{{ title }}</h1>
-    <p>{{ homepage_text }}</p>
+	<h1>{{ title }}</h1>
+	<p>{{ homepage_text }}</p>
 {% endblock %}
-{% block main %}
-     {% for post in section.posts %}
-        <h3>{{ post.postTitle }}</h3>
-         <p>Ecrit par {{ post.user.username }} le
-             {{ post.postDateCreated|date("d/m/Y \à H:i") }}</p>
-         <p>{{ post.postText }}</p>
-    <p>
-         {% for section in post.sections %}
-             <a href="{{ path('section',{id:section.id}) }}">{{ section.SectionTitle }}</a>
-         {% else %}
-             <h3>Pas encore de section</h3>
-         {%  endfor %}
-             </p>
+
+{% block containerPost %}{% endblock %}
+
+{% block carousel %}{% endblock %}
+
+
+{% block psplus %}
+	
+<div id="plus">
+    <div class="container-sm p-5">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{ asset('img/fondo plus.webp') }}" class="d-block mx-lg-auto img-fluid rounded shadow" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Bienvenue sur PlayStation Blogger</h1>
+                    <p class="lead">Découvrez les dernières nouveautés en matière de jeux vidéo ! Nos articles mettent en avant les nouvelles sorties et les DLC récents, explorant leurs fonctionnalités et l'impact sur l'expérience de jeu. Restez informé sur les tendances actuelles pour ne rien manquer !
+
+</p>
+                   
+                </div>
+            </div>
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mb-5">
+                <h1 class="display-4 font-weight-bolder">Derniers Articles</h1>
+                <p class="lead">Découvrez nos derniers articles sur les jeux et DLC récents.</p>
+            </div>
+        </div>
+        <div class="row">
+    {% for post in section.posts %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">{{ post.postTitle }}</h4>
+                    <h6 class="card-subtitle text-muted">Écrit par {{ post.user.username }} le {{ post.postDateCreated|date("d/m/Y à H:i") }}</h6>
+                    <p class="card-text p-y-1">{{ post.postText }}</p>
+                    <a href="#" class="card-link">link</a>
+                    <a href="#" class="card-link">Second link</a>
+                </div>
+            </div>
+        </div>
     {% else %}
-    <h3>Pas encore d'articles</h3>
+        <h3>Pas encore d'articles</h3>
     {% endfor %}
+</div>
+
+</div>
 
 {% endblock %}

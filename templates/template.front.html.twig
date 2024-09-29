@@ -121,9 +121,10 @@
     </div>
 {% endblock %}
     
-    
-    <!-- Playstation Plus -->
-    <div id="plus">
+    {% block psplus %}
+     <!-- Playstation Plus -->
+
+        <div id="plus">
         <div class="container-sm p-5">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -154,6 +155,9 @@
 
 
 
+    
+    {% endblock %}
+   
 {% block footer %}
 <!-- footer-->
     <footer>
