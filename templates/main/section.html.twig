@@ -13,7 +13,54 @@
 	<p>{{ homepage_text }}</p>
 {% endblock %}
 
-{% block containerPost %}{% endblock %}
+{% block containerPost %}
+<div class="container px-4 py-5" id="custom-cards" style="margin-top:6rem;">
+        <h2 class="pb-2 border-bottom text-center">Nos dérniere Post Blog</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0"
+                    style="background: linear-gradient(90deg, hsla(208, 100%, 41%, 1) 0%, hsla(216, 40%, 58%, 1) 100%);;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Exclusive Games</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{{asset('img/icons/ps.png')}}" alt="Playstation" width="45" height="32">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0"
+                    style="background: linear-gradient(90deg, hsla(240, 100%, 50%, 1) 0%, hsla(240, 100%, 15%, 1) 0%, hsla(0, 0%, 0%, 1) 81%);">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Crossplay</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{{asset('img/icons/crossplay.png')}}" alt="Crossplay" width="32" height="32">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0"
+                    style="background: linear-gradient(90deg, hsla(46, 100%, 49%, 1) 0%, hsla(46, 100%, 49%, 1) 11%, hsla(329, 20%, 24%, 1) 100%);">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Playstation Plus</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{{asset('img/icons/plus.png')}}" alt="Bootstrap" width="32" height="32">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block carousel %}{% endblock %}
 
